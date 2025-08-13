@@ -9,7 +9,7 @@
 }
 
 .header {
-  padding: 10px;
+  padding: 15px;
   background-color: #a4bfdbff;
   display: flex;
   justify-content: space-between;
@@ -18,8 +18,8 @@
 
 .logo-section {
   border: 2px solid white;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   background-color: white;
   padding: 10px;
     border-radius: 50%;
@@ -72,8 +72,8 @@
 }
 .profile-circle {
   border: 2px solid white;
-  width: 45px;
-  height: 45px;
+ width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: white;
   display: flex;
@@ -94,8 +94,17 @@
 }
 
 .product-grid {
+    list-style-type: none;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-auto-rows: 300px;
+  gap: 20px;
+  padding: 1rem;
+  justify-content: center;
 }
-.product-list {
-  list-style-type: none;
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
 }

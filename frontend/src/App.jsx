@@ -21,15 +21,13 @@ function App() {
         </div>
       </header>
       <div className="overflow-container" style={{}}>
-        <div className="product-grid">
-          <ul className="product-list">
+          <ul className="product-grid">
             <li className="product-card">Product Card 1</li>
             <li className="product-card">Product Card 2</li>
             <li className="product-card">Product Card 3</li>
             <li className="product-card">Product Card 4</li>
             <li className="product-card">Product Card 5</li>
           </ul>
-        </div>
       </div>
     </div>
   );
