@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <header className="header" style={{}}>
+        <div className="logo-section">Logo</div>
+        <div className="search-bar-section">
+          <input
+            type="text"
+            id="search-bar-input"
+            name="search-bar-input"
+            placeholder="Search products here"
+          ></input>
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </div>
+        <div className="user-profile-section">
+          <div className="profile-circle">ZC</div>
+        </div>
+      </header>
+      <div className="overflow-container" style={{}}>
+        <div className="product-grid">
+          <ul className="product-list">
+            <li className="product-card">Product Card 1</li>
+            <li className="product-card">Product Card 2</li>
+            <li className="product-card">Product Card 3</li>
+            <li className="product-card">Product Card 4</li>
+            <li className="product-card">Product Card 5</li>
+          </ul>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
