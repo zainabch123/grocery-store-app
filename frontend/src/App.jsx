@@ -1,35 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import SearchPage from "./pages/search/searchPage.jsx";
+import LoginPage from "./pages/login/loginPage.jsx";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="container">
-      <header className="header" style={{}}>
-        <div className="logo-section">Logo</div>
-        <div className="search-bar-section">
-          <input
-            type="text"
-            id="search-bar-input"
-            name="search-bar-input"
-            placeholder="Search products here"
-          ></input>
-          <button className="search-button" type="submit">
-            Search
-          </button>
-        </div>
-        <div className="user-profile-section">
-          <div className="profile-circle">ZC</div>
-        </div>
-      </header>
-      <div className="overflow-container" style={{}}>
-          <ul className="product-grid">
-            <li className="product-card">Product Card 1</li>
-            <li className="product-card">Product Card 2</li>
-            <li className="product-card">Product Card 3</li>
-            <li className="product-card">Product Card 4</li>
-            <li className="product-card">Product Card 5</li>
-          </ul>
-      </div>
-    </div>
+    <Routes>
+      <Route path="search" element={<SearchPage />} />
+      <Route path="/" element={<LoginPage/>}/>
+    </Routes>
   );
 }
 
