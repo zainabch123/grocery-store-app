@@ -1,9 +1,12 @@
 import "./loginPage.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
+    const navigate = useNavigate();
+
 
   function handleInput(event) {
     const { name, value } = event.target;
@@ -25,7 +28,12 @@ const LoginPage = () => {
 
         const data = await res.json();
         console.log("returned data:", data.user);
+
+        if(data.user) {
         setFormData({ email: "", password: "" });
+        navigate("/search");
+        }
+
       } catch (error) {
         console.log("Error", error);
       }
