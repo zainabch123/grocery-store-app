@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 import userRouter from "./routes/user.js";
 
 // Add routers here:
-app.use("/user", userRouter );
+app.use("/user", userRouter);
 
 // Test route to check if the server is running
 app.get("/*test", async (req, res) => {

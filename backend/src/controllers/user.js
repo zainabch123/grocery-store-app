@@ -1,4 +1,4 @@
-import { registerUserdb } from "../domains/user.js";
+import { registerUserdb, loginUserdb } from "../domains/user.js";
 
 const registerUser = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
@@ -12,8 +12,16 @@ const registerUser = async (req, res) => {
     }
 }
 
+const loginUser = async (req, res) => {
+    const { email, password} = req.body;
+
+    try {
+        const currentUser = await loginUserdb(email, password);
+        return res.status(200).json({user: currentUser});
+    } catch (error) {
+        console.log("Error", error);
+    }
+};
 
 
-
-
-export {registerUser};
+export {registerUser, loginUser};
