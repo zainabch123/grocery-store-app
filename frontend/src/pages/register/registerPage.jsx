@@ -1,4 +1,5 @@
 import "./registerPage.css";
+import {Link} from "react-router-dom";
 
 const RegisterPage = () => {
   return (
@@ -8,7 +9,12 @@ const RegisterPage = () => {
           <h2>Register</h2>
           <label>
             First Name:
-            <input type="text" id="first-name" name="first-name" required></input>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              required
+            ></input>
           </label>
           <label>
             Last Name:
@@ -28,6 +34,11 @@ const RegisterPage = () => {
             ></input>
           </label>
           <button type="submit">Submit</button>
+          <hr></hr>
+          <div className="login-link">
+            <p>Already have an account?</p>
+            <Link to={`/`}>Login</Link>
+          </div>
         </form>
       </div>
     </div>
