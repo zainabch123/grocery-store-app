@@ -28,7 +28,7 @@ const LoginPage = () => {
         });
 
         const data = await res.json();
-        console.log("returned data:", data.user);
+        console.log("returned data:", data);
 
         if (data.user) {
           setFormData({ email: "", password: "" });

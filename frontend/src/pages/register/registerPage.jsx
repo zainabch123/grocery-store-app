@@ -29,7 +29,7 @@ const RegisterPage = () => {
          });
 
          const data = await res.json();
-         console.log("returned data:", data.user);
+         console.log("returned data:", data);
 
          if (data.user) {
            setFormData({ firstName: "", lastName: "",email: "", password: "" });
