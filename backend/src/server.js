@@ -17,9 +17,14 @@ app.use(express.json());
 // Tell express to use a URL Encoding middleware
 app.use(express.urlencoded({ extended: true }));
 
-//Add routers below:
+// Import routers
+import userRouter from "./routes/user.js";
 
-app.get("/*splat", async (req, res) => {
+// Add routers here:
+app.use("/user", userRouter );
+
+// Test route to check if the server is running
+app.get("/*test", async (req, res) => {
   res.send("ok");
 });
 

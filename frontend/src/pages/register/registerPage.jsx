@@ -1,18 +1,18 @@
-import "./loginPage.css";
+import "./registerPage.css";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <form className="login-form">
-          <h2>Login</h2>
+    <div className="register-page">
+      <div className="register-card">
+        <form className="register-form">
+          <h2>Register</h2>
           <label>
             First Name:
-            <input type="text" id="first-name" name="first-name"></input>
+            <input type="text" id="first-name" name="first-name" required></input>
           </label>
           <label>
             Last Name:
-            <input type="text" id="last-name" name="last-name"></input>
+            <input type="text" id="last-name" name="last-name" required></input>
           </label>
           <label>
             Email:
@@ -34,4 +34,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

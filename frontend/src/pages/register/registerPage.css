@@ -1,4 +1,4 @@
-.login-page {
+.register-page {
   height: 100vh;
   display: grid;
   align-items: center;
@@ -6,31 +6,31 @@
   background-color: rgb(248, 126, 146);
 }
 
-.login-card {
+.register-card {
   padding: 1rem;
 }
 
-.login-form {
+.register-form {
   display: grid;
   grid-template-columns: minmax(300px, 400px);
   background-color: white;
   padding: 20px;
-  gap: 15px;
+  gap: 10px;
   border-radius: 15px;
 }
 
-.login-form h2 {
+.register-form h2 {
   text-align: center;
   margin: 30px 0px 10px 0px;
   font-weight: 600;
 }
 
-.login-form label {
+.register-form label {
   font-size: 18px;
   padding: 0px 5px;
 }
 
-.login-form input {
+.register-form input {
   width: 100%;
   font-size: 16px;
   padding: 10px;
@@ -39,7 +39,7 @@
   border: 1px solid gray;
 }
 
-.login-form button {
+.register-form button {
   font-size: 15px;
   width: fit-content;
   padding: 10px 40px;
@@ -50,7 +50,7 @@
   cursor: pointer;
 }
 
-.login-form button:hover {
+.register-form button:hover {
   background-color: rgb(248, 126, 146);
   color: white;
 }
