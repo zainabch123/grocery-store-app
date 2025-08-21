@@ -1,12 +1,13 @@
 import "./loginPage.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../utils/appContext";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  const {apiUrl} = useContext(AppContext);
 
   function handleInput(event) {
     const { name, value } = event.target;
@@ -18,7 +19,7 @@ const LoginPage = () => {
 
     const loginUser = async () => {
       try {
-        const res = await fetch("http://localhost:4000" + "/user/login", {
+        const res = await fetch(apiUrl + "/user/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -29,11 +30,10 @@ const LoginPage = () => {
         const data = await res.json();
         console.log("returned data:", data.user);
 
-        if(data.user) {
-        setFormData({ email: "", password: "" });
-        navigate("/search");
+        if (data.user) {
+          setFormData({ email: "", password: "" });
+          navigate("/search");
         }
-
       } catch (error) {
         console.log("Error", error);
       }

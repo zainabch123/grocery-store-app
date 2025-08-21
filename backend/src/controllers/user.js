@@ -15,6 +15,8 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const { email, password} = req.body;
 
+
+
     try {
         const currentUser = await loginUserdb(email, password);
         return res.status(200).json({user: currentUser});

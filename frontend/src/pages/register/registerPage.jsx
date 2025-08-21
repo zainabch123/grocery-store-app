@@ -1,11 +1,14 @@
 import "./registerPage.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {Link} from "react-router-dom";
+import { AppContext } from "../../utils/appContext";
+
 
 const RegisterPage = () => {
    const [formData, setFormData] = useState({ firstName: "", lastName:"", email: "", password: "" });
    const navigate = useNavigate();
+   const {apiUrl} = useContext(AppContext);
 
    function handleInput(event) {
      const { name, value } = event.target;
@@ -17,7 +20,7 @@ const RegisterPage = () => {
 
      const registerUser = async () => {
        try {
-         const res = await fetch("http://localhost:4000" + "/user/register", {
+         const res = await fetch(apiUrl + "/user/register", {
            method: "POST",
            headers: {
              "Content-Type": "application/json",
