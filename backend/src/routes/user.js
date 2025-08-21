@@ -6,6 +6,6 @@ import { registerUser, loginUser } from "../controllers/user.js";
 router.post("/register", registerUser);
 
 // Login new users:
-router.get("/login", loginUser);
+router.post("/login", loginUser);
 
 export default router;
