@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SearchPage from "./pages/search/searchPage.jsx";
 import RegisterPage from "./pages/register/registerPage.jsx";
@@ -9,8 +10,16 @@ import "./App.css";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const App = () => {
+  const [products, setProducts] = useState([]);
+
+  const fetchSearchResults = async(searchInput) => {
+    const response = await fetch(
+      `https://dummyjson.com/products/search?q=${searchInput}`
+    );
+    return await response.json();
+  }
   return (
-    <AppContext.Provider value={({apiUrl})}>
+    <AppContext.Provider value={({apiUrl, fetchSearchResults, products, setProducts})}>
       <Routes>
         <Route path="search" element={<SearchPage />} />
         <Route path="register" element={<RegisterPage />} />

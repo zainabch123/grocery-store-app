@@ -1,5 +1,31 @@
+import { useState, useContext} from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../utils/appContext.jsx";
+
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState("");
+  const {fetchSearchResults, setProducts} = useContext(AppContext);
+    const navigate = useNavigate();
+
+
+  function handleInput(event) {
+    setSearchInput(event.target.value);
+  }
+
+  const handleClick = async (event) => {
+    event.preventDefault();
+
+    try {
+      const results = await fetchSearchResults(searchInput);
+      setProducts(results.products);
+      navigate("/search");
+    } catch (error) {
+      console.log("Error", error);
+    }
+  }
+  
+
     return (
       <header>
         <div className="header-content">
@@ -11,8 +37,10 @@ const Header = () => {
                 id="search-bar"
                 name="search-bar"
                 placeholder="Search groceries today..."
+                value={searchInput}
+                onChange={handleInput}
               ></input>
-              <button type="button" className="search-button">
+              <button type="button" className="search-button" onClick={handleClick}>
                 Search
               </button>
             </div>

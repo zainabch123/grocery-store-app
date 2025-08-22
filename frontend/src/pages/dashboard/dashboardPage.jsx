@@ -9,7 +9,6 @@ import { useState } from "react";
 const DashboardPage = () => {
   const heroImg = [heroImage1, heroImage2, heroImage3];
   const [currentIndex, setCurrentIndex] = useState(0);
-  console.log(currentIndex);
 
   function nextHeroImg() {
     setCurrentIndex((i) => (i === heroImg.length - 1 ? 0 : i + 1));
@@ -18,6 +17,8 @@ const DashboardPage = () => {
   function prevHeroImg() {
     setCurrentIndex((i) => (i === 0 ? heroImg.length - 1 : i - 1));
   }
+
+
 
   return (
     <div className="dashboard-page">
