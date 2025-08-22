@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import Header from "../../components/header";
 import "./searchPage.css";
 
 const SearchPage = () => {
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => console.log(json)); 
+  }, []);
   return (
     <div className="search-page">
       <Header />
