@@ -1,10 +1,10 @@
-import Header from "../../../components/header";
+import Header from "../../components/header";
 import "./searchPage.css";
 
 const SearchPage = () => {
   return (
     <div className="search-page">
-      <Header/>
+      <Header />
       <div className="overflow-container">
         <ul className="product-card-grid">
           <li className="product-card">Item 1</li>
