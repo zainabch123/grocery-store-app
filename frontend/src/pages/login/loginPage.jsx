@@ -32,7 +32,7 @@ const LoginPage = () => {
 
         if (data.user) {
           setFormData({ email: "", password: "" });
-          navigate("/search");
+          navigate("/");
         }
       } catch (error) {
         console.log("Error", error);

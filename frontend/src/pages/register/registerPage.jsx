@@ -33,7 +33,7 @@ const RegisterPage = () => {
 
          if (data.user) {
            setFormData({ firstName: "", lastName: "",email: "", password: "" });
-           navigate("/search");
+           navigate("/");
          }
        } catch (error) {
          console.log("Error", error);
