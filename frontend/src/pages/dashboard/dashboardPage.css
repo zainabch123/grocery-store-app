@@ -96,6 +96,7 @@ input:focus {
     border-radius: 12px;
     background-color: rgb(240, 239, 239);
     color: black;
+    font-size: 14px;
 }
 
 .nav-bar a:hover {
@@ -104,6 +105,7 @@ input:focus {
 }
 
 .hero-image-carousel {
+    position: relative;
     height: 90%;
 }
 
@@ -112,4 +114,27 @@ input:focus {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+}
+
+.next-button {
+    padding: 20px;
+    font-size: 34px;
+    border-radius: 15px;
+    z-index: 1;
+    position: absolute;
+    right: 10px;
+    top: 200px;
+    cursor: pointer;
+}
+
+.prev-button {
+    padding: 20px;
+    font-size: 34px;
+    border-radius: 15px;
+    z-index: 1;
+    position: absolute;
+    left: 10px;
+    top: 200px;
+        cursor: pointer;
+
 }
